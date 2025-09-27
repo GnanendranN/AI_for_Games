@@ -1,33 +1,32 @@
 # Ex.No: 7  Implementation of Simple Pathfinding with Obstacles
 ### DATE:                                                                            
-### REGISTER NUMBER : 
-### AIM: 
+### REGISTER NUMBER : 212223240037
+# AIM: 
 To write a program to pathfinding using AI navigation 
-### Algorithm:
-```
+# Algorithm:
 1. Create a New Unity Project by Open the  Unity Hub and create a new 3D Project,Name the project (e.g., Pathfinding).
-2. Set Up the Scene by Create the Ground (Plane or Terrain)
+2. Set Up the Scene by Create the Ground (Plane or Terrain)  
   Go to: GameObject → 3D Object → Plane and Rename: "Ground"  Scale it: (10, 1, 10) (or adjust as needed)
-3. Add Obstacles (Cubes or Walls)
-  Go to: GameObject → 3D Object → Cube  Scale it: (3, 3, 1) (for a wall-like structure)
-  Position it: Place it anywhere to block AI movement Rename it: "Obstacle"  Duplicate: Ctrl + D to create multiple obstacles ,tag the obstacke with same name.
-4.Bake the NavMesh
-Go to: Window → AI → Navigation , Select Ground: Click on your Ground object ,
-In Navigation Window: Check ✅ "Navigation Static"  or Add component Navigation surface and Bake
-5.Create the AI Character and Attach navMesh Agent
-Go to: GameObject → 3D Object → Capsule ,  Rename: "AICharacter" , Scale: (1, 2, 1)
-Go to: Inspector → Add Component → NavMeshAgent Adjust Settings: Speed: 3.5 Stopping Distance: 1  Obstacle Avoidance: High
-6.Create the Script "AIPathFinder" (Go to: Assets → Right Click → Create → C# Script and  Rename it: "AIPathfinder"
-7.Attach the Script"AIPathFinder" code by Drag & Drop the AIPathfinder.cs onto the AICharacter 
-8.Assign the Target:Create a Target: GameObject → 3D Object → Sphere, Rename it: "Target",
- In AICharacter Inspector → AIPathfinder → Drag the Target Sphere into the "target" field.
-9.Add NavMeshObstacle
-Select an Obstacle (Cube)
-Go to: Inspector → Add Component → NavMeshObstacle and Check: ✅ "Carve"
-10.Move the Obstacle with Code ( attach it with Obstacle) 
-11. Run the program
-```  
-### Program:
+3. Add Obstacles (Cubes or Walls)  
+  Go to: GameObject → 3D Object → Cube  Scale it: (3, 3, 1) (for a wall-like structure)  
+  Position it: Place it anywhere to block AI movement Rename it: "Obstacle"  Duplicate: Ctrl + D to create multiple obstacles ,tag the obstacke with same name.  
+4. Bake the NavMesh  
+Go to: Window → AI → Navigation , Select Ground: Click on your Ground object ,  
+In Navigation Window: Check ✅ "Navigation Static"  or Add component Navigation surface and Bake  
+5. Create the AI Character and Attach navMesh Agent 
+Go to: GameObject → 3D Object → Capsule ,  Rename: "AICharacter" , Scale: (1, 2, 1)  
+Go to: Inspector → Add Component → NavMeshAgent Adjust Settings: Speed: 3.5 Stopping Distance: 1  Obstacle Avoidance: High  
+6. Create the Script "AIPathFinder" (Go to: Assets → Right Click → Create → C# Script and  Rename it: "AIPathfinder"  
+7. Attach the Script"AIPathFinder" code by Drag & Drop the AIPathfinder.cs onto the AICharacter  
+8. Assign the Target:Create a Target: GameObject → 3D Object → Sphere, Rename it: "Target",  
+ In AICharacter Inspector → AIPathfinder → Drag the Target Sphere into the "target" field.  
+9. Add NavMeshObstacle  
+Select an Obstacle (Cube)  
+Go to: Inspector → Add Component → NavMeshObstacle and Check: ✅ "Carve"  
+10. Move the Obstacle with Code ( attach it with Obstacle)  
+11. Run the program  
+
+# Program:
 ```
 using System.Collections;
 using System.Collections.Generic;
@@ -51,7 +50,9 @@ public class AIPathfinder : MonoBehaviour
         agent.SetDestination(target.position);
     }
 }
-#Moving Obstacle
+```
+**Moving Obstacle**
+```
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -75,18 +76,13 @@ void Start()
     }
 }
 ```
-For smooth movement(optional)  -> use  
-float movement = Mathf.PingPong(Time.time * moveSpeed, moveDistance) - moveDistance / 2;
-transform.position = startPos + new Vector3(movement, 0, 0);
-### Output:
+- For smooth movement(optional)  -> use  
+- float movement = Mathf.PingPong(Time.time * moveSpeed, moveDistance) - moveDistance / 2;
+- transform.position = startPos + new Vector3(movement, 0, 0);
+# Output:
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/8e69301e-2cca-4d1f-b382-ff46632f7749" />
 
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/1e0f4516-51f0-4c46-b9ea-9bf86293113a" />
 
-
-
-
-
-
-
-
-### Result:
+# Result:
 Thus the simple path finding  behavior was implemented using AI navigation successfully.
