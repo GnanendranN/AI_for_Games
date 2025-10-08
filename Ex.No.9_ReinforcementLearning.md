@@ -1,26 +1,26 @@
 # Ex.No: 9  Implementation of Simple Reinforcement Learning 
 ### DATE:                                                                            
-### REGISTER NUMBER : 
-### AIM: 
+### REGISTER NUMBER : 212223240037
+# AIM: 
 To write a program to implement  Reinforcement learning  in Unity 
-### Algorithm:
-```
-1.Create a new 3D Unity project
-2.Create a plane → Right-click Hierarchy > 3D Object > Plane
-3.Create an Agent (Cube)
-4.3D Object → Cube → Rename to Agent
+# Algorithm:
+1. Create a new 3D Unity project
+2. Create a plane → Right-click Hierarchy > 3D Object > Plane
+3. Create an Agent (Cube)
+4. 3D Object → Cube → Rename to Agent
 5. Add Rigidbody (disable gravity if needed)
 6. Create a Target (Sphere)
-7.3D Object → Sphere → Rename to Target
-8.Create an empty GameObject → Area (to reset Agent and Target positions)
-9.Add the Behavior Parameters component to your Agent
-10.Behavior Name: MoveToTarget
-11. Vector Observation: 7 (3 for agent pos + 3 for target pos + 1 for velocity), 
-Action Space: Continuous (2)
-12. run the command 
+7. 3D Object → Sphere → Rename to Target
+8. Create an empty GameObject → Area (to reset Agent and Target positions)
+9. Add the Behavior Parameters component to your Agent
+10. Behavior Name: MoveToTarget
+11. Vector Observation: 7 (3 for agent pos + 3 for target pos + 1 for velocity), Action Space: Continuous (2)
+12. run the command
+```
 mlagents-learn config.yaml --run-id=move-to-target --train
-```  
-### Program:
+```
+# Program:
+### 1. File : RollerAgent.cs 
 ```
 using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
@@ -81,7 +81,9 @@ public class MoveToTargetAgent : Agent
         cont[1] = Input.GetAxis("Vertical");
     }
 }
-config .yaml
+```
+### 2. Create a "Rollerball.yaml" file (create a Config folder inside your project ) attach the following code
+```
 behaviors:
   MoveToTarget:
     trainer_type: ppo
@@ -105,15 +107,22 @@ behaviors:
         gamma: 0.99
         strength: 1.0
 ```
-### Output:
+# Output:
+### Unity Render:
 
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/8f45f8d2-b74c-4eae-baca-0f00152f9e04" />
 
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/e2c2cade-82e0-4335-a6a5-c647be87bc2a" />
 
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/7da8f184-f9d5-4a3f-a0cd-8fa1a0c1a4d3" />
 
+### TensorBoard grapghs:
 
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/69116d6e-73ae-4f76-9168-6db814cdbfc9" />
 
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/dfb7e7bb-422a-455e-bc3c-a4a50971c78f" />
 
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/9748399b-b62c-47b6-a97b-959c20802101" />
 
-
-### Result:
+# Result:
 Thus the AI character was trained using reinforcement learning.
