@@ -148,14 +148,11 @@ public class AICharacter : MonoBehaviour {
 4. AICharacter assigned a start and goal
 
 # Output:
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/295daa50-0614-437d-a0ee-fbff03f97b13" />
 
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/c1ccd860-c493-4d83-ba94-cdbd59784eb7" />
 
-
-
-
-
-
-
+<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/6a2be26c-d0a2-4645-af17-9a4c08a00285" />
 
 # Result:
 Thus the pathfinding algorithm was sucessfully implemented.
